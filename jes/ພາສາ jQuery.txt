@@ -1,0 +1,921 @@
+  ==========================================================================================================================================================
+			ວິຊາ: jQuery
+				ບົດທີ່: 1
+			ຄວາມຮູ້ຟື້ນຖານກ່ຽວກັບ jQuery
+1. jQuery ແມ່ນຫຍັ່ງ?
+ 	jQuery ແມ່ນ javascript Library ເຊິ່ງ jQuery ໄດ້ລວບລວມເອົາ Object ແລະ Function ຕ່າງໆ ທີ່ຈຳເປັນມາເກັບໄວ້ ໃນຮູບແບບ
+Lidrary ແລະ ອອກແບບມາເພື່ອເຮັດການຂຽນ javascript ນັ້ນມີຄວາມສະດວກ ແລະ ງາຍຂື້ນ.
+
+2. ການດາວໂຫຼດ ແລະ ຕິດຕັ້ງ jQuery 
+	jQery ສາມາດດາວໂຫຼດໄດ້ຈາກ www.jQuery.com
+	
++ ວິທີຕິດຕັ້ງ jQuery 
+	ໃຫ້ນຳເອົາຟາຍ jquery.js ທີ່ດາວໂຫຼດໄວ້ນັ້ນໄປເກັບໄວ້ໃນ folder ທີ່ເຮົາຕ້ອງການນຳໃຊ້
+
++ ໂຄງສ້າງຂອງ ພາສາ jQuery
+	ການຂຽນ jQuery ແມ່ນຈະຂຽນໄວ້ໃນແທັກ .....<head>......</head>    ເຊິ່ງມີຕົວຢ່າງດັ່ງນີ້:
+	<html>
+		<head>
+			<title>....</title>
+			<script src=" ຊື່ຟາຍ.js"></script>
+			<script>
+				ຂຽນໂຄດ.....
+			</script>
+		</head>
+		<body>
+			............
+		</body>
+	</html>
+3. ຮູບແບບການຂຽນ jQuery
+	ຮຸບແບບການຂຽນ jQuery ແມ່ນ ມີ 2 ຮູບແບບ ຄື່:
+#ຮູບແບບທີ 1:
+	<script>
+	$(document).ready(function(){
+		//ຂຽນ script ລະຫວ່າງນີ້...
+	)};
+	</script>
+
+# ຮູບແບບທີ 2:
+	<script>
+	$(function()){
+		//ຂຽນ script ລະຫວ່າງນີ້....
+	)};
+	</script>
+
+4. ການຂຽນ jQuery ເພື່ອເອົາຄຳເວົ້າມາສະແດງຜົນ
+	<html>
+		<head>
+			<script src="jquery.js"></script>
+			<script>
+				$(document).ready(function(){
+					document.write("Hello word");
+				});
+			</script>
+		</head>
+	</html>
+
+5. ຮູບແບບຄໍາສັ່ງຟື້ນຖານຂອງພາສາ jQuery
+	jQuery ອອກແບບມາໃຫ້ເລື່ອກເອົາ HTML element(element ໝາຍເຖິງ tag ຂອງ HTML ) ແລະ ກຳນົດ 
+action ໃຫ້ກັບຕົວເຮົາເລືອກນັ້ນ ເຊິ່ງມີຮູບແບບດັ່ງນີ້:
+
+  $("selector").action()
+	$ ເປັນເຄື່ອງໝາຍເພືອເຂົ້າເຖິງ jQuery
+	selector	ສ່ວນທີ່ເລືອກ
+	action	ຄື່ຕົວໃຫ້ກຳນົດ selector ທຳງານ
+
+  - ການເລື່ອກ tag element
+	$("p") ເລືອກ tag p ທັງໝົດ
+  - ການເລືອກ class ແມ່ນດ້ວຍຍາລັກ ' . '
+	$(".test")  ເລືອກ tag ທັງໝົດທີ່ມີ class ຊື່ວ່າ  test
+  - ການເລືອກ id ແມ່ນດວ້ຍສັນຍາລັກ ' # '
+	$("#test") ເລືອກ tag ທັງໝົດທີ່ມີ id ຊື່ວ່າ test
+  - ການເລືອກຮູບຕ່າງໆ
+	- $("*")	ໝາຍເຖິງການເລືອກທັງໝົດ ຂອງ element
+	- $(this)	ໝາຍເຖິງເລືອກຂໍ້ມູນໃນແທັກນີ້
+	- $("p.text") ໝາຍເຖິງການລະບຸ ຊື່ແທັກ ພ້ອມກັບ ຊື່ class.
+	- $("$new1,$new2")  ໝາຍເຖິງການເລືອກ id ເພື່ອໃຫ້ທຳງານພ້ອມກັນ 2 ຕົວຂື້ນໄປ
+	
+==============================================================================================
+==============================================================================================
+				ບົດທີ 2  ການນໍາໃຊ້ Events
+	1. jQuery Events
+
+ +mouse Events
+	- click		ເຫດການຈະເກີດຂື້ນ ເມື່ອມີການຄີຣກ element ທີ່ເລືອກ
+	- dblclick		ເຫດການຈະເກີດຂື້ນ ເມື່ອມີການດັບເບີ້ນຄີຣກ element
+	- mouseenter	ເຫດການຈະເກີດຂື້ນ ເມື່ອເມົ້າເລື່ອນໄປຢູ່ element ທີ່ເລືອກ
+	- hover		ເຫດການຈະເກີດຂື້ນ ເມື່ອເມົ້າເລື່ອນໄປຢູ່ element ທີ່ເລືອກ
+	- mouseover	ເຫດການຈະເກີດຂື້ນ ເມື່ອເມົ້າເລື່ອນໄປຢູ່ element ທີ່ເລືອກ
+	- mouseleave	ເຫດການຈະເກີດຂື້ນ ເມື່ອເມົ້າອອກຈາກ    element ທີ່ເລືອກ
+ +action effects.
+	- hide		ເຊື່ອງ
+	- show 		ສະແດງ
+	- toggle		ເຊື່ອງ ແລະ ສະແດງ
+	- slideUp		ເລື່ອນຂື້ນ
+	- slidedown	ເລືອນລົງ
+	- slide Toggel	ເລື່ອນຂື້ນ ແລະ ເລື່ອນລົງ
+	- fadeIn		ຄ່ອຍໆສະແດງອອກມາ
+	- fade Out		ຄ່ອຍໆຫາຍໄປ
+	- fade Toggel	ຄ່ອຍໆ ສະແດ່ງ ແລະ ຄ່ອຍໆ ຫາຍໄປ
+ + keyboard Events
+	- keypress ໝາຍເຖິງເຫດການທີ່ເກີດຂື້ນເມືອມີການກົດປຸ່ມໃນ keyboard
+		 ຍົກເວັ້ນປຸ່ມທີ່ເປັນ key ຕ່າງໆ ຂອງ  keyboard ເຊັ້ນ: ait , ctrl, shift...
+	- keydown	 ໝາຍເຖິງເຫດການທີ່ເກີດຂື້ນເມືອມີການກົດປຸ່ມໃນ keyboard
+	- keyup      ໝາຍເຖິງເຫດການທີ່ເກີດຂື້ນເມືອມີການປ່ອຍປຸ່ມທີ່ກົດໃນ keyboard
+2. ວິທີການນໍາ Events
+	- ຮູບແບບການນໍາໃຊ້ events
+	$(function(){
+		$("selector").events(function(){
+			ເຫດການທີກຳນົດ....
+		});
+	});
+    + ຕົວຢ່າງ:
+1. ເຮົາມີຂໍ້ມູນດັ່ງນີ້:
+ 	 <p>ເຊື່ອງ</p>
+     - ຈົງຂຽນ jQuery ດັ່ງນີິ້:
+ + ຈົ່ງເຊື່ອງຄຳເວົ້າຂ້າງເຖິງນີ້.
+    <script>
+       $(function(){
+        $("p").show() //ກຳນົດຄຳສັ່ງລັງຈຸດ ແລ້ວ ໃຊ້ຄຳສັ່ງທີ່ຕ້ອງການໃຊ້
+       })
+    </script>
+</head>
+<body>
+    <p>ເຊືອງ</p>
+</body>
+------------------------------------------------------------
+2. ເຮົາມີຂໍ້ມູນດັ່ງນີ້
+  <p class="a">ຫ້ອງ B2\2</p>
+    <p class="b">ຫ້ອງ B2\1</p>
+- ຈົງຂຽນ ເພື່ອເຊື່ອງຄຳວ່າ ຫ້ອງ B2/1
+ <script>
+       $(function(){
+        $(".b").hide() //ກຳນົດຄຳສັ່ງລັງຈຸດ ແລ້ວ ໃຊ້ຄຳສັ່ງທີ່ຕ້ອງການໃຊ້
+       })
+    </script>
+// ຂຽນໂຄດໃນ body
+  <p class="a">ຫ້ອງ B2\2</p>
+    <p class="b">ຫ້ອງ B2\1</p>
+----------------------------------------------------------------------
+3. ເຮົາມີຂໍ້ມູນດັ່ງນີ້
+ <p class="a">ຫ້ອງ B2\2</p>
+    <p class="b">ຫ້ອງ B2\1</p>
+    <p id="c">ຫ້ອງ B2\3</p>
+- ຈົງຂຽນ ເພື່ອເຊື່ອງຄຳວ່າ ຫ້ອງ B2/3
+    <script src="jQuery.js"></script>
+    <script>
+       $(function(){
+        $("#c").hide() //ກຳນົດຄຳສັ່ງລັງຈຸດ ແລ້ວ ໃຊ້ຄຳສັ່ງທີ່ຕ້ອງການໃຊ້
+       })
+    </script>
+</head>
+<body>
+    <p class="a">ຫ້ອງ B2\2</p>
+    <p class="b">ຫ້ອງ B2\1</p>
+    <p id="c">ຫ້ອງ B2\3</p>
+</body>
+-----------------------------------------------------------------------
+5. ເຮົາມີຂໍ້ມູນດັ່ງນິີ້:
+ <h1>ການນຳໃຊ້ mouse event</h1>
+- ຈົ່ງຂຽນ jQuery ເມືອກົດໃສ່ ຂໍ້ຄວາມແລ້ວໃຫ້ຂໍ້ຄວາມນັ້ນຫາຍໄປ
+   <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('h1').click(function(){
+                $('h1').hide()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>ການນຳໃຊ້ mouse event</h1>
+</body>
+----------------------------------------------------------------------
+6. ເຮົາມີຂໍ້ມູດັ່ງນີ້:
+-ຈົ່ງຂຽນ  jQuery ເພື່ອເຊືອງຂໍ້ມູນໃນແທັກ  h1 ຫຼັງຈາກນັ້ນໃຫ້ທໍາງານດັ່ງນີ້:
+<h1 id="hidden">ທຸກໆວັນທີ່ມາຫາວິທະຍາໄລ ບີຊີທີ ຕ້ອງແຕງໂຕໃຫ້ເປັນລະບຽບ</h1>
+  ເມືອກົດໃສ່ປຸ່ມ show ໃຫ້ຂໍ້ມູນໃນແທັກ h1   ມາສະແດ່ງ
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                $('#hidden').show()
+            })
+            $('#hidden').hide();
+        })
+    </script>
+</head>
+<body>
+    <button>show</button>  
+    <h1 id="hidden">ທຸກໆວັນທີ່ມາຫາວິທະຍາໄລ ບີຊີທີ ຕ້ອງແຕງໂຕໃຫ້ເປັນລະບຽບ</h1>
+</body>
+----------------------------------------------------------------------
+7. ເຮົາມີຂໍ້ມູນດັ່ງນີ້:
+   <p class="a">click toggle</p>
+    <p class="b">dblclick toggle</p>
+    <button type="button"class="b_a">click</button>
+    <button type="button"class="b_b">dblclick</button>
+ຈົ່ງຂຽນ jquery ໃຫ້ທຳງານດັ່ງນີ້:
+ - ເມືອກົດໃສ່ປຸ່ມ  click ແລ້ວໃຫ້ຄຳວ່າ click toggle ນັ້ນຫາຍໄປ ແລະ ຄຣີກໃສ່ອີກຄັ້ງກໍໃຫ້ກັບມາສະແດ່ງຜົນຄື່ເກົາ
+- ເມືອເຮົາດັບເບີ້ນຄຣີກໃສ່ຄໍາວ່າ dblclick ໃຫ້ໃຫ້ຄຳວ່າ dblclick toggle ນັ້ນຫາຍໄປ
+ ແລະ ເມືອໃສ່ດັບເບີ້ນຄຣິກໃສ່ອິກຄັ້ງໃຫ້ກັບມາສະແດ່ງຜົນຄືເກົາ
+
+  <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('.b_a').click(function(){
+                $('.a').toggle()
+            })
+          
+            $('.b_b').dblclick(function(){
+                $('.a').toggle()
+            })
+        
+        })
+    </script>
+</head>
+<body>
+    <p class="a">click toggle</p>
+    <p class="b">dblclick toggle</p>
+    <button type="button"class="b_a">click</button>
+    <button type="button"class="b_b">dblclick</button>
+</body>
+------------------------------------------------------------------------------------------------
+8. ເຮົາມີຂໍ້ມູນດັ່ງນິ້:
+ 	<h1>ການນຳໃຊ້ Mouse event</h1>
+  ຈົ່ງຂຽນ jQuery ລຸ່ມນີ້:
+- ເມືອເອົາເມົ້າອອກຈາກຄໍາວ່າ ການນໍາໃຊ້ Mouse event ໃຫ້ຄຳເວົ້ານັ້ນຫາຍໄປ
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('h1').mouseleave(function(){
+                $('h1').fadeOut()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>ການນຳໃຊ້ Mouse event</h1>
+</body>
+---------------------------------------------------------------------------------------------
+9. ເຮົາມີຂໍ້ມູນດັ່ງນິ້:
+ 	<h1>ການນຳໃຊ້ Mouse event</h1>
+  ຈົ່ງຂຽນ jQuery ລຸ່ມນີ້:
+- ເມື່ອເອົາເມົ້າໃສ່ h1 ໃຫ້ຂໍ້ຄວາມເປັນສີແດງ ເມື່ອນຳອອກໃຫ້ເປັນສີດຳ
+
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('h1').mouseenter(function(){
+                $('h1').css("color","red")
+            })
+            $('h1').mouseleave(function(){
+                $('h1').css("color","black")
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>ຈົງນຳໃຊ Mouse event</h1>
+</body>
+--------------------------------------------------------------------------------------------
+10. ເຮົາມີຂໍ້ມູນດັ່ງນິ້:
+ 	ປ້ອນຂໍ້ມູນ: <input type="text" name='key'>
+  ຈົ່ງຂຽນ jQuery ເມືອກົດປຸ່ມ keyboard ໃຫ້ຂະນາດຕົວໜັງສື ເປັນ 30 px ບັອກເປັນສີເທົາ
+   ເມືອເຮົາວ່າງປຸ່ມ ຄິບອດ ໃຫ້ຂະໜາດຕົວອັກສອນເປັນ 12 px ແລະ ບັອກເປັນສີບົວ
+
+ <script src="jQuery.js"></script>
+    <script>
+        $(function() {
+            $('input').keydown(function() {
+                $('input').css("font-size", "30px", ).css('outline-color', 'kray')
+            })
+            $('input').keyup(function() {
+                $('input').css("font-size", "12px").css('outline-color', 'yellow')
+            })
+        })
+    </script> 
+</head>
+<body>
+    <input type="text" name="key" id="">
+</body>
+---------------------------------------------------------------------------------------------------
+11. ຈົ່ງນໍາເອົາຮູບພາບມາສະແດງຜົນໃນໜ້າເວັບຫຼັງຈາກນັ້ນຂຽນ jQuery ເພື່ອໃຫ້ສະແດ່ງຜົນດັງນີ້
+
+- ຖ້າຫາກວ່າ ກົດປຸ່ມເລືອນຂື້ນ ໃຫ້ຮູບພາບເລື້ອນຂື້ນ
+- ຖ້າຫາກວ່າ ກົດປູ່ມເລືອນລົງ ໃຫ້ຮູບພາບເລື້ອນລົງ
+- ຖ້າຫາກວ່າກົດປຸ່ມ ເລື່ອນຂື້ນ ແລະ ເລື່ອນລົງ ໃຫ້ຮູບພາບ ເລື່ອນຂື້ນ ແລະ ເມືອກົດປູ່ມອີກຄັ້ງໃຫ້ຮູບພາບເລື່ອນລົງ
+
+    <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('#slideup').click(function(){
+                $('img').slideUp()
+            })
+
+            $('#slidedown').click(function(){
+                $('img').slideDown()
+            })
+
+            $('#slidetoggle').click(function(){
+                $('img').slideToggle()
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="bb.jpeg" alt="" width="300" height="300">
+    <button type="button" id="slideup">ເລື່ອນຂື້ນ</button>
+    <button type="button" id="slidedown">ເລື່ອນລົງ</button>
+    <button type="button" id="slidetoggle">ເລື່ອນຂື້ນ ແລະ ເລື່ອນລົງ</button>
+</body>
+---------------------------------------------------------------------------------------------------
+12. ເຮົາມີຂໍ້ມູນດັ່ງນີ້:
+    <input type="text" class="search">
+    <button type="submit" class="btn">ຄົ້ນຫາ</button>
+  ຈົ່ງຂຽນ jquery ໃຫ້ທຳງານດັ່ງນີ້:
+- ຈົ່ງເຊື່ອງບັອກ input
+- ເມືອກົດໃສ່ປຸ່ມ ຄົ້ນຫາແລ້ວ ໃຫ້ບັອກ input ມາສະແດ່ງ
+- ເມືອກົດໃສ່ບັອກປ້ອນຂໍ້ມູນ ໃຫ້ສີຂອບເປັນສີຟ້າ
+- ເມືອກົດປູ່ມຄິບອດແລ້ວໃຫ້ຕົວໜັງສືເປັນສີດໍາ ແລະ ຂອບບັອກເປັນສີຟ້າ
+
+   <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('.search').hide()
+            $('.search').click(function(){
+                $('.search').css("outline-color","blue")
+            })
+            $('.search').keydown(function(){
+                $('.search').css("outline-color","green").css("color","green")
+            })
+            $('.search').keyup(function(){
+                $('.search').css("color","black").css("outline-color","pink")
+            })
+
+            $('.btn').click(function(){
+                $('.search').show()
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" class="search">
+    <button type="submit" class="btn">ຄົ້ນຫາ</button>
+</body>
+--------------------------------------------------------------------------------------------
+===========================================================================================================================
+===========================================================================================================================
+		ບົດທີ 3
+	ການນຳໃຊ້  jQuery ເພື່ອຮັບຂໍ້ມູນຈາກ ຟອມ
+1. ການຮັບຂໍ້ມູນດ້ວຍ jQuery
+	ເຮົາຈະຂຽນ jQuery ເພືອຮັບຂໍ້ມູນຈາກ ຟອມ ຫຼັງຈາກນັ້ນຈຶ່ງຄ່ອຍດຶງຂໍ້ມູນທີ່ຮັບມາ ໄປຫາອີກຟາຍໜຶ່ງ
+ ເພື່ອໃຫ້ທໍາງານຕາມຈຸດປະສົງທີ່ຕ້ອງການ
+
+ #  ຮູບແບບການຮັບຂໍ້ມູນ:
+	$(function(){
+	        $("ເລືອກ id ຫຼື class ຂອງປຸ່ມ").click(function(){
+		var ຊື່ຕົວປ່ຽນ 1= $("ຮັບ id ຫຼື class ບັອກ1").val();
+		var ຊື່ຕົວປ່ຽນ 2= $("ຮັບ id ຫຼື class ບັອກ2").val();
+		$.get ຫຼື post(ຊື່ຟາຍ.ນາມສະກຸນ,{
+		ວ່າງຄ່າໃໝ່ 1: ຕົວປ່ຽນ 1,
+		ວ່າງຄ່າໃໝ່ 2: ຕົວປ່ຽນ 2,
+		},	
+		function(output){
+		$("ບ່ອນສະແດ່ງຂໍ້ມູນລາຍງານຜົນ ເລືອກ id ຫຼື class").html(output);
+		})
+	        })
+	})
+
+      ຕົວຢ່າງ: ຈົ່ງສ້າງຂໍ້ມູນແບບຟອມດັ່ງນີ້: ( ນໍາໃຊ້ boortstrap )
+	ຊື່:
+	ນາມສະກຸນ:
+	ເພດ:
+		ປຸ່ມສົງຂໍ້ມູນ ແລະ ປຸ່ມລ້າງຂໍ້ມູນ
+	ຫຼັງຈາກນັ້ນຂຽນ jQuery ເພື່ອຮັບຂໍ້ມູນຈາກຟອມ ແລ້ວ ສົງຂໍ້ມູນໄປຫາ file
+  ຊື່ວ່າ : get_data.php?
+---------------------
+  => file form.php
+
+   <script src="jQuery.js"></script>
+    <script>
+        $(function(){
+            $('#send').click(function(){
+                var fname = $("#fname").val();
+                var lname = $("#lname").val();
+                var gender = $("input[id='gender']:checked").val();
+            
+                $.post("get_data.php",{
+                    fname:fname,
+                    lname:lname,
+                    gender:gender
+                },
+                function(output){
+                    $(".show").html(output);
+                });
+            });
+        }); 
+     </script>
+</head>
+<body>
+    <form>
+     ຊື່: <input type="text" name="" id="fname"><br>
+     ນາມສະກຸນ: <input type="text" name="" id="lname"><br>
+      ເພດ<input type="radio" name="gender" id="gender" value="ຍິງ">ຍິງ
+      <input type="radio" name="gender" id="gender" value="ຊາຍ" >ຊາຍ<br>
+       <button type="button" id="send">ບັນທຶກ</button>
+       <button type="reset">ລ້າງຂໍ້ມູນ</button>
+       <h1 class="show"></h1>
+     </form>
+</body>
+
+----------
+ => file get_data.php 2;
+
+<?php
+    echo "ສະບາຍດີທ່ານ ";
+    echo $fname=$_POST['fname'];
+    echo $lname=$_POST['lname'];
+    echo $gender=$_POST['gender'];
+?>
+-------------------------------------------------------------------------------------------------------------------
+ ຕົວຢ່າງ 2: ຈົ່ງສ້າງແບບຟອມຂໍ້ມູນລຸ່ມນີ້:
+	
+	ລະຫັດສິນຄ້າ:
+	ຊື່ສິນຄ້າ:
+	ຈຳນວນ:
+	ລາຄາຊື້:
+	ລາຂາຍ:
+	ໝາຍເຫດ:
+		ປຸ່ມສົງຂໍ້ມູນ		ປຸ່ມລ້າງຂໍ້ມູນ
+	ຫຼັງຈາກນັ້ນ ຂຽນ jquery ເພື່ອຮັບຂໍ້ມູນຈາກແບບຟອມ ແລ້ວສົງຂໍ້ມູນໄປຫາ file
+   get_data2.php? ( ໃຫ້ສົງແບບ POST )
+-------------------------------------------------------------------------------------------------------------------
+2. ການນຳໃຊ້ if , else if,else ເພື່ອກວດສອບຂໍ້ມູນ
+      ໂຄງສ້າງ:
+	$(function(){
+	    $("ເລືອກ id ຫຼື class ຂອງປຸ່ມ").click(function(){
+		var ຊື່ຕົວປ່ຽນ1 = $("ຮັບ id ຫຼື class ຂອງບ໋ອກ 1").val();
+		var ຊື່ຕົວປ່ຽນ2 = $("ຮັບ id ຫຼື class ຂອງບ໋ອກ 2").val();
+		if(ຊື່ຕົວປ່ຽນ ==""){
+			alert("ປ້ອນຂໍ້ມູນ...");
+		}else if(ຊື່ຕົວປ່ຽນ ==""){
+			alert("ປ້ອນຂໍ້ມູນ...");
+		}else{
+		       $.get ຫຼື post("ຊື່ຟາຍ.ນາມສະກຸນ",{
+			ວ່າງຕົວປ່ຽນ 1 : ຮັບຕົວປ່ຽນ 1,
+			ວ່າງຕົວປ່ຽນ 2 : ຮັບຕົວປ່ຽນ 2,
+			},
+			function(output){
+			$("ບ່ອນສະແດ່ງຜົນເພື່ອລາຍງານຜົນ ເລືອກ id ຫຼື class").html(output);
+			
+		       )}
+		}// ປິດ else
+	    })
+	})
+
+  ------------
+   ຕົວຢ່າງ : ຈົ່ງສ້າງຂໍ້ມູນແບບຟອມດັ່ງນີ້: ( ນຳໃຊ້  bootstrap )
+	ຊື່ :
+	ນາມສະກຸນ :
+	ເພດ :
+	ປີຮຽນ : 
+	ຫ້ອງຮຽນ:
+		ປຸ່ມສົງຂໍ້ມູນ		ປຸ່ມລ້າງຂໍ້ມູນ
+	ຈົ່ງຂຽນ jquery ເພື່ອກວດສອບເງືອນໄຂດັ່ງນີ້:
+	ຖ້າຫາກວ່າ ບໍ່ປ້ອນຊື່, ບໍ່ປ້ອນນາມສະກຸນ, ບໍ່ເລືອກເພດ, ບໍ່ປ້ອນປີຮຽນ, ບໍ່ປ້ອນຫ້ອງຮຽນ
+		ໃຫ້ຟ້ອງຄຳວ່າ
+	ຖ້າຫາກວ່າ ບໍ່ປ້ອນຊື່ ໃຫ້ຟ້ອງຄຳວ່າ ກະລຸນາປ້ອນຊື່
+	ຖ້າຫາກວ່າ ບໍ່ປ້ອນນາມສະກຸນ ໃຫ້ຟ້ອງຄຳວ່າ ກະລຸນາປ້ອນນາມສະກຸນ
+	ຖ້າຫາກວ່າ ບໍ່ເລືອກເພດ ໃຫ້ຟ້ອງຄຳວ່າ ກະລຸນາເລືອກເພດ
+	ຖ້າຫາກວ່າ ບໍ່ປ້ອນປີຮຽນ ໃຫ້ຟ້ອງຄຳວ່າ ກະລຸນາປ້ອນປີຮຽນ
+	ຖ້າຫາກວ່າ ບໍ່ປ້ອນຫ້ອງຮຽນ ໃຫ້ຟ້ອງຄຳວ່າ ກະລຸນາປ້ອນຫ້ອງຮຽນ
+
+---------
+ file from3.php? // ຟາຍສ້າງຟ້ອມ
+
+    <script src="jQuery.js"></script>
+    <script>
+        $(function() {
+            $('#idia').click(function() {
+                var fname = $('#fname').val();
+                var lname = $('#lname').val();
+                var gender = $("input[id='gender']:checked").val();
+                var schoolyear = $('#schoolyear').val();
+                var schoolroom = $('#schoolroom').val();
+                if (fname == '' && lname == '' && gender == undefined && schoolyear == '' && schoolroom == '') {
+                    alert("ກະລຸນາປ້ອນຂໍ້ມູນ...");
+                } else if (fname == '') {
+                    alert("ກະລຸນາປ້ອນຊື່...");
+                } else if (lname == '') {
+                    alert("ກະລານາປ້ອນນາມສະກຸນ...");
+                } else if (gender == undefined) { 
+                    alert("ກະລຸນາເລືອກເພດ...");
+                } else if (schoolyear == '') {
+                    alert("ກະລຸນາປ້ອນປີຮຽນ...");
+                } else if (schoolroom == '') {
+                        alert("ກະລຸນາປ້ອນຫ້ອງຮຽນ...");
+                } else {
+                  document.write(fname,lname,gender,schoolyear,schoolroom);  //ຫາກນອກເນືອເງືອນໄຂ
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-secondary text-light text-center">
+                        <h3><b>ຂໍ້ມູນນັກສຶກສາ</b></h3>
+                    </div>
+                    <div class="card-body bg-success">
+                        <form action="">
+                            <div class="form-group">
+                                <label>ຊື່</label>
+                                <input type="text" name="" id="fname" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>ນາມສະກຸນ</label>
+                                <input type="text" name="" id="lname" class="form-control">
+                            </div>
+
+
+                            <label>ເພດ</label>
+                            <input type="radio" name="gender" id="gender" value="ຍິງ"> ຍິງ
+                            <input type="radio" name="gender" id="gender" value="ຊາຍ"> ຊາຍ
+
+                            <div class="form-group">
+                                <label>ປີຮຽນ</label>
+                                <input type="text" name="" id="schoolyear" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>ຫ້ອງຮຽນ</label>
+                                <input type="text" name="" id="schoolroom" class="form-control">
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-warning" id="idia">ສົງຂໍ້ມູນ</button>
+                                <button type="reset" class="btn btn-danger">ລ້າງຂໍ້ມູນ</button>
+                            </div>
+                          <h2 class="show"></h2>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-dark"></div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</body>
+
+---------------
+ file get_data3.php? // ຟາຍຮັບຂໍ້ມູນເພື່ອສະແດ່ງ
+
+<?php
+    echo $fname=$_POST['fname'];
+    echo $lname=$_POST['lname'];
+    echo $gender=$_POST['gender'];
+    echo $schoolyear=$_POST['schoolyear'];
+    echo $schoolroom=$_POST['schoolroom'];
+?>
+------------------------------------------------------------------------------------------------------------------
+   ບົດເຝິກຫັດ:
+1. ແບບຟອມ
+	ຊື່:
+	ນາມສະກຸນ:
+	ອາຍຸ:
+		ປຸ່ມ Go ປຸ່ມ Reset
+	ຈົ່ງຂຽນ jQuery ເພື່ອກວດສອບຂໍ້ມູນຕາມເງື່ອນໄຂດັ່ງນີ້:
+	ຖ້າຫາກ ອາຍຸທີປ້ອນ ແມ່ນຕຳກວ່າ 15 ໃຫ້ສະແດ່ງຄໍາວ່າເດັກນ້ອຍ
+	ຖ້າຫາກ ອາຍຸທີ່ປ້ອນ ແມ່ນ 15 ຫາ 18 ໃຫ້ສະແດ່ງຄໍາວ່າໄວລຸ້ນ
+	ຖ້າຫາກ ອາຍຸທີ່ປ້ອນ ແມ່ນ 19 ຫາ 40 ໃຫ້ສະແດ່ງຄໍາວ່າ ໄລໝຸ່ມ
+	ຖ້າຫາກ ອາຍຸທີ່ປ້ອນ ແມ່ນ 41 ຫາ 80 ໃຫ້ສະແດ່ງຄໍາວ່າ ຜູ້ເຖົ້າ
+	ນອກເໜືອກຈາກເງື່ອນໄຂ ໃຫ້ສະແດ່ງຄຳວ່າ ໄຊສະລາ
+---------
+file form4.php?
+
+    <script src="jQuery.js"></script>
+    <script>
+        $(function() {
+            $('.send').click(function() {
+                var fname = $('#fname').val();
+                var lname = $('#lname').val();
+                var age = $('#age').val();
+                if (age <= 15) {
+                    document.write("ເດັກນ້ອຍ")
+                } else if (age >= 15 && age <= 18) {
+                    document.write("ໄວລຸ້ນ")
+                } else if (age >= 19 && age <= 40) {
+                    document.write("ໄວໝຸ່ມ")
+                } else if (age >= 41 && age <= 80) {
+                    document.write("ຜຸ້ເຖ້າ")
+                } else {
+                    document.write("ໄຊສະລາ")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form>
+        ຊື່:<input type="text" name="" id="fname"><br>
+        ນາມສະກຸນ:<input type="text" name="" id="lname"><br>
+        ອາຍຸ: <input type="text" name="" id="age"><br>
+        <button type="button" class="send">Go</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+------------------------------------------------------------------------------------------------------------
+2. ເຮົາມີຂໍ້ມູນດັ່ງນີ້:
+        ຊື່:<input type="text" name="" id="fname"><br>
+        ນາມສະກຸນ:<input type="text" name="" id="lname"><br>
+        ຄະແນນ: <input type="text" name="" id="grade"><br>
+        <button type="button" class="send">ກວດສອບ</button>
+ ຈົ່ງຂຽນ jQuery ເພືອກວດສອບຕາມເງືອນໄຂດັ່ງນີ້:
+	ຖ້າຫາກວ່າ ໄດ້ຄະແນນ 90 ຂື້ນໄປ ໃຫ້ສະແດ່ງຄຳວ່າ ໄດ້ A
+	ຖ້າຫາກວ່າ ໄດ້ຄະແນນ 80 - 89 ໃຫ້ສະແດ່ງຄໍາວ່າໄດ້ grade ທີ່ໄດ້ແມ່ນ B+
+	ຖ້າຫາກວ່າ ໄດ້ຄະແນນ 70 - 79 ໃຫ້ສະແດ່ງຄໍາວ່າໄດ້ grade ທີ່ໄດ້ແມ່ນ B
+	ຖ້າຫາກວ່າ ໄດ້ຄະແນນ 60 - 69 ໃຫ້ສະແດ່ງຄໍາວ່າໄດ້ grade ທີ່ໄດ້ແມ່ນ C+
+	ຖ້າຫາກວ່າ ໄດ້ຄະແນນ 50 - 59 ໃຫ້ສະແດ່ງຄໍາວ່າໄດ້ grade ທີ່ໄດ້ແມ່ນ C
+	ຖ້າຫາກວ່າ ໄດ້ຄະແນນ ໜ້ອຍກວ່າ 50 ໃຫ້ສະແດ່ງຄໍາວ່າໄດ້ grade  ທີ່ໄດ້ແມ່ນ F
+
+----------
+ file form5.php?
+
+    <script src="jQuery.js"></script>
+    <script>
+        $(function() {
+            $('.send').click(function() {
+                var fname = $('#fname').val();
+                var lname = $('#lname').val();
+                var grade = $('#grade').val();
+                if (grade > 90) {
+                    document.write("Grade A ")
+                } else if (grade >= 80 && grade <= 89) {
+                    document.write("Grade B")
+                } else if (grade >= 70 && grade <= 79) {
+                    document.write("Grade B+")
+                } else if (grade >= 60 && grade <= 69) {
+                    document.write("Grade C+")
+                } else if (grade >= 50 && grade <= 59) {
+                    document.write("Grade C")
+                } else if (grade <50) {
+                    document.write("Grade F")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form>
+        ຊື່:<input type="text" name="" id="fname"><br>
+        ນາມສະກຸນ:<input type="text" name="" id="lname"><br>
+        ຄະແນນ: <input type="text" name="" id="grade"><br>
+        <button type="button" class="send">ກວດສອບ</button>
+    </form>
+</body>
+-----------------------------------------------------------------------------------------
+3. ການນໍາໃຊ້ sweetalert
+	sweetalert ເປັນ js ແລະ css ທີ່ຊ່ວຍເຮັດໃຫ້ການ alert ມີຄວາມສວຍງາມຍິງຂື້ນ
++ ວິທີຕິດຕັ້ງ sweetalert 
+	ໃຫ້ນຳເອົາ folder sweetalert ໄປເກັບໄວໃນ folder ທີເຮົາຕ້ອງການນຳໃຊ້
+
++ ການເອີ້ນເອົາຟາຍ sweetalert2.all.min.js ມານຳໃຊ້.
+	<script src="sweetalert/dist/sweetalert2.all.min.js"></script>
++ ການເອີ້ນແບບ online
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   ພາສວນຄໍາສັ່ງ 
+	Swal.fire({
+		icon: 'warning', //error, warning, success, question
+		title: 'ການແຈ້ງເຕືອນ';//ຫົວຂໍ້
+		text: 'ກະລຸນາປ້ອນຊື່!';//ເນື້ອໃນ
+		confirmButtonText: 'ຕົກລົງ',//ປ່ຽນຊື່ປຸ່ມ confirm
+		ShowcloseButton: true,	// ສະແດ່ງປຸ່ມປິດໜ້າ
+		Show CancelButton: true,	//ສະແດ່ງປຸ່ມຍົກເລີກ
+		CancelButtonText: 'ຍົກເລີກ',	//ປ່ຽນຊື່ສະແດ່ງຍົກເລີກ
+		imageUrl: 'ຊື່ຮູບ.ນາມສະກຸນ',	//ຮູບພາບ
+		imageheight: 1500,	//ຂະນາດຮູບ(ຫລວງສູງ)
+		position: 'top-end',	//ຕໍາແໜງການສະແດ່ງການແຈ່ງເຕື່ອນ
+		showconfirmButton: false,	//ບໍ່ສະແດ່ງປຸ່ມຕົກລົງ
+		timer:   1500	//ໄລຍະເວລາສະແດ່ງ
+		ConfirmButtoncolor: '#3085d6',	//ສີປຸ່ມຢືນຢັ້ນ
+		CancelButtoncolor: '#d33',	//ສີປຸ່ມຍົກເລີກ
+	footer:  '<a href=""> why do i have this issue?</a>',//ພາກສ່ວນລຸ່ມ
+	})
+  ລິ້ງ sweetalert2
+
+
+4. ການເອົາ icon ມາໃສ່
+	+ ວິທີນໍາໃຊ້
+		ໃຫ້ເອົາ folder icon ໄປເກັບໄວ້ໃນ folder ທີ່ຕ້ອງການໃຊ້.
+	+ ວິທີເອີ້ນ icon ມາໃຊ້ງານ
+		<link rel="stylesheet" href="icon/css/all.min.css">
+=================================================================================================================
+   	ຄຳສັງການກັນລະຫັດຜ່ານມີຢູ່ ສອງແບບ md5(' password '); password('passwrod');
+=================================================================================================================
+					ບົດທີ 4:
+			Query+PHP+Mysql ໃນການພັດທະນາສາງສິນຄ້າ (ຂະນາດໜ້ອຍ )
+		ໃນບົດຮຽນນີ້ເຮົາຈະຮຽນຮູ້ກ່ຽວກັບການພັດທະນາລະບົບຊອບແວ ໂດຍນຳໃຊ້ ບົດຮຽນທີ່ໄດ້ຮຽນມາເຊິ່ງລັກໆ ແມ່ນ
+	jQuery, ພາສາ PHP, ນຳໃຊ້ພາສາ SQL ເພື່ອບໍ່ລິຫານຈັດການກັບຖານຂໍ້ມູນ Mysql ນອກນັ້ນ, ຍັງມີພາສາ HTML ,CSS ແລະ 
+	ອື້ນໆ....ໃນລະບົບບໍ່ລິຫານສາງສິນຄ້າທີ່ເຮົາຈະພັດທະນານັ້ນ ທັງໝົດມີ 8 ຕາຕະລາງຄື່:
+		1. ຕາຕະລາງປະເພດສິນຄ້າ (Categories)
+		2. ຕາຕະລາງຂໍ້ມູນສິນຄ້າ (Products)
+		3. ຕາຕະລາງນໍາເຂົ້າ (Receives)
+		4. ຕາຕະລາງຂາຍອອກ (Orders);
+		5. ຕາຕະລາງແຂວງ (province);
+		6. ຕາຕະລາງເມືອງ (districts)
+		7. ຕາຕະລາງບ້ານ (Village)
+		8. ຕາຕະລາງຜູ້ນໍາໃຊ້ (Users)
+	ເຊິ່ງໃນແຕ່ຕາຕະລາງ ເຮົາຈະສ້າງແບບຟ້ອມ ເພື່ອບັນທຶກຂໍ້ມູນ ແລະ ສ້າງຟາຍລາຍງານຕ່າງໆ
+    ເພື່ອໃຫ້ຕອບສະໜອງກັບຄວາມຕ້ອງການຂອງຜູ້ຊົມໃຊ້
+
+1. ຈົ່ງສ້າງຖານຂໍ້ມູນຊື່ວ່າ db_stock ໃຫ້ຮ້ອງຮັບພາສາລາວ
+
+	create database db_stock default character set utf8 collate utf8_general_ci;
+
+2. ຈົ່ງສ້າງຕາຕະລາງເພື່ອເກັບກໍາຂໍ້ມູນຂອງປະເພດສິນຄ້າ ຊື່ວ່າ categories (ໃຫ້ຮ້ອງຮັບພາສາລາວ) ເຊິ່ງປະກອບມີຂໍ້ມູນດັງນີ້:
+
+	cate_id		ລະຫັດປະເພດສິນຄ້າ PK ( ກຳນົດໃຫ້ເປັນ Key ຫຼັກເພື່ອໃຊ້ໃນການເຊື່ອມໂຍງ​ )
+	cate_name	ຊື່ປະເພດສິນຄ້າ
+	remark		ໝາຍເຫດ
+
+	create table categories(cate_id int(5) auto_increment primary key,cate_name varchar (20) not null,remark text not null)default charset=utf8;
+
+  - ຈົ່ງສ້າງຊື່ຟາຍ  Connect_dbstock.php ເພື່ອເຊື່ອມໂຍງກັບຖານຂໍ້ມູນ db_stock
+	ໝາຍເຫດ:  ໃຫ້ສ້າງ folder ໃຫ່ມຂື້ນມາຕາງຫາກ ເພື່ອຄວາມລະບຽບ ແລະ ເຂົ້າໃຈງາຍ
+	ພ້ອມກັບສຳເນົາເອົາ bootstrap , sweetalert, icon, jquery.js  
+  - ຈົ່ງສ້າງຟ້ອມ (form_categories.php) ເພື່ອໃຊ້ໃນການປ້ອນຂໍ້ມູນ ໃຫ້ນຳໃຊ້ bootstrap ເພື່ອໃຫ້ແບບຟອມຮອງຮັບໄດ້ທຸກໆອຸປະກອນ
+  - ຈົ່ງຂຽນ jQuery ເພື່ອກວດສອບຂໍ້ມູນດັ່ງນີ້: (ນຳໃຊ້ sweetalert )
+	ຖ້າຫາກວ່າ ບໍ່ປ້ອນຊື່ປະເພດສິນຄ້າ ໃຫ້ປ້ອບອັນຂື້ນມາວ່າ ກະລຸນາປ້ອນປະເພດສິນຄ້າ
+  - ໃຫ້ນໍາໃຊ້ jQuery ເພື່ອສົງຂໍ້ມູນໄປຫາຟາຍຮັບ
+  - ຈົ່ງສ້າງຟາຍບັນທຶກເຂົ້າຖານຂໍ້ມູນ ( insert_categories.php ) ເພື່ອຮັບຂໍ້ມູນຈາກຟອມ
+	ຫຼັງຈາກນັ້ນໃຫ້ບັນທຶກຂໍ້ມູນເຂົ້າໄປໃນຕາຕະລາງໂດຍມີເງື່ອນໄຂວ່າ ຖ້າຫາກສິນຄ້າໂຕໃດ ທີ່ມີຢູ່ແລ້ວ ແມ່ນບໍ່ໃຫ້ບັນທຶກໄດ້ອີກ
+  - ຈົ່ງສ້າງຟາຍລາຍງານ ( select_categories.php ) ເພື່ອດຶງຂໍ້ມູນຈາກຕາຕະລາງ categories ໃນຖານຂໍ້ມູນ ອອກມາສະແດ່ງຜົນໃນໜ້າ
+	Web application ພ້ອມທັ່ງແກ້ໄຂ່ໄດ້ ແລະ ລົບຂໍ້ມູນໄດ້.
+3. ຈົ່ງສ້າງຕາຕະລາງເພື່ອເກັບກໍາຂໍ້ມູນຂອງສິນຄ້າ
+         ຊື່ວ່າ: products (ໃຫ້ຮ້ອງຮັບພາສາລາວ)
+     	ເຊິ່ງປະກອບມີຂໍ້ມູນດັ່ງນີ້:
+		prod_id		:ລະຫັດສິນຄ້າ PK ( ກຳນົດເປັນ key ຫຼັກເພື່ອໃຊ້ໃນ 
+				ການເຊື່ອມໂຍງ)
+				ກຳນົດເປັນ varchar ເພື່ອໃຫ້ຮ້ອງຮັບກັບເຄື່ອງສະແກນບາໂຄດ
+		cate_id		:ລະຫັດກຸມສິນຄ້າ FK ( ກຳນົດໃຫ້ເປັນ key ສຳຮ້ອງ ເຊິ່ງເຊື່ອມ
+				ໂຍງຕາຕະລາງ categories;)
+		prod_name	:ຊື່ສິນຄ້າ
+		qty		:ຈຳນວນ
+		bprice		:ລາຄາຊື້
+		sprice		:ລາຄາຂາຍ
+		remark		:ໝາຍເຫດ
+  ຕອບ :	create table products(
+	prod_id varchar(50)primary key,
+	cate_id int(5) not null,foriegn key(cate_id)references categories(cate_id),
+	prod_name varchar(200) not null,
+	qty int(20) not null,
+	bprice decimal (12,2)not null,
+	sprice decimal (12,2)not null,
+	remark text not null)default charset=utf8;
+  - ຕາຕະລາງ products ຈະເຊື່ອມຫາຕາຕະລາງ categories ພ້ອມ ຟິວ cate_id ເພື່ອໃຫ້ຮູ້ວ່າ ສິ້ນຄ້າແຕ່ລະຢາງທີ່ເຮົາບັນທຶກແມ່ນຢູ່ໃນປະເພດໃດ
+  -ຈົ່ງສ້າງຟອມ (form_products.php)ເພື່ອປ້ອນຂໍ້ມູນ ໃຫ້ນຳໃຊ້ bootsatrap ເພື່ອໃຫ້ຟອມຮອງຮັບທຸກໆອຸປະກອນ ແລະ ນຳໃຊ້ jquery ເພື່ອສົ່ງຂໍ້ມູນໄປຫາຟາຍຮັບ?
+	ໝາຍເຫດ: 	ໃຫ້ສ້າງໂຟລເດີຕ່າງຫາກ ເພື່ອບໍ່ປົນກັນ ຟາຍຂອງຕາຕະລາງ categories	ໃນຟອມແມ່ນໃຫ້ມີບ່ອນເລືອກປະເພດສີ້ນຄ້າຢູ່ນຳ
+  -ຈົ່ງສ້າງຟາຍຮັບ	(insert_products.php)ເພື່ອຮັບຂໍ້ມູນຈາກນັ້ນໃຫ້ບັກທຶກຂໍ້ມູນເຂົ້າໄປໃນຕາຕະລາງ
+  -ຈົ່ງສ້າງຟາຍລາຍງານ	(select_products.php) ເພືອດຶງຂໍ້ມູນຈາກຕາຕະລາງ productsໃນຖານຂໍ້ມູນ ອອກມາສະແດງຜົນ
+	ໃນໜ໊າ web application ພ້ອມທັງໃຫ້ສາມາດແກ້ໄຂ ແລະ ລົບຂໍ້ມູນ
+
+4. ຈົ່ງສ້າງ ຕາຕະລາງ ເພື່ອເກັບກໍາສິນຄ້ານໍາເຂົ້າ ຊື່ວ່າ receives ( ໃຫ້ຮ້ອງຮັບພາສາລາວ )
+	rid		ລະຫັດສິນຄ້ານຳເຂົ້າ PK
+	prod_id		ລະຫັດສິນຄ້າ FK ( ເປັນຄິສຳຮ້ອງ ເຊື່ອມໂຍງກັບຕາຕະລາງ products )
+	rqty		ຈຳນວນ
+	bprice		ລາຂາຊື້
+	amount		ລວມເປັນເງິນ
+	rdate		ວັນທີນຳເຂົ້າ
+	rtime		ເວລາຮັບເຂົ້າ
+	remark		ໝາຍເຫດ
+
+   ຕອບ:	 create table receives (rid int(5)auto_increment primary key,
+	prod_id varchar(50) not null,foreign key(prod_id) references products(prod_id),
+	rqty int(5) not null,
+	bprice decimal (12,2) not null,
+        sprice decimal (12,2) not null, 
+	amount decimal (12,2) not null,
+	rdate date not null,
+	rtime time not null,
+	remark text not null)default charset=utf8;
+   - ຕາຕະລາງ receives ສ້າງຂຶ້ນມາເພື່ອເກັບກຳຂໍ້ມູນການນຳເຂົ້າແຕ່ລະຄັ້ງ ຕາຕະລາງ receives ຈະເຊື່ອມໂຍງກັບຕາຕະລາງ products 
+    	 ດວ້ຍຟິວ prod_id ເພື່ອໃຫ້ຮູ້ວ່າ ສິນຄ້ານຳເຂົ້າວ່າມີສິນຄ້າໃດແດ່
+   - ຈົ່ງສ້າງຟອມ ( form_receives.php ) ເພື່ອໃຊ້ໃນການປ້ອນຂໍ້ມູນຈາກຟອມແລ້ວນຳມາບັນທຶກລົງຕາຕະລາງ receives ໂດຍມີເງືອນໄຂຄື່
+ 	ທຸກໆຄັ້ງທີ່ບັນທຶກຂໍ້ມູນ ຕ້ອງໃຫ້ຈຳນວນສິນຄ້າ ຢູ່ໃນຕາຕະລາງ products ເພີ່ມຂື້ນຕາມຈຳນວນທີ່ເຮົາບັນທຶກ
+   - ຈົ່ງສ້າງຟາຍງາຍງານ ( select_receives.php ) ເພື່ອດຶງຂໍ້ມູນຈາກຕະລາງ receives ໃນຖານຂໍ້ມູນ ອອກມາສະແດ່ງຜົນໃນໜ້າ
+	web application
+
+ 5 ຈົ່ງສ້າງຕາຕະລາງ ເພື່ອເກັບກໍາຂໍ້ມູນສິນຄ້າຂາຍອອກ ຊື່: orders    (ໃຫ້ຊັບພອດພາສາລາວ)
+		oid	ລະຫັດສິນຄ້າຂາຍອອກ pk ( ກຳນົດເປັນkey ຫຼັກ)
+		bill_no ເລກທີ່ໃບບິນ
+		prod_id ລະຫັດສິນຄ້າ pk ( ກຳນົດເປັນkey ສຳຮອງ ເຊີ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ products)
+		oqty ຈຳນວນຂາຍ
+		sprice	ລາຄາຂາຍ
+		amount	ລວມເປັນເງິນ
+		odate 	ວັນທີ່ຂາຍ
+		otime	ເວລາຂາຍ
+		remark	ໝາຍເຫດ
+
+create table orders(oid int(20)auto_increment primary key,
+	bill_no  varchar (150) not null,
+	prod_id varchar(30)not null,foreign key(prod_id) references products (prod_id),
+	oqty int(20)not null,
+	sprice decimal (12,2) not null,
+	amount decimal (12,2)not null,
+	odate date not null,
+	otime time not null,
+	bill_status varchar(1)
+	remark text not null)default charset=utf8;
+- ຕາຕະລາງ orders  ສ້າງຂຶ້ນມາເພື່ອບັນທຶກການຂາຍແຕ່ລະຄັ້ງ ຕາຕະລາງ  orders ຈະເຊື່ອມຫາຕາຕະລາງ products ດ້ວຍຟິວ prod_id ເພື່ອໃຫ້ຮູ້ວ່າ
+	ສິ້ນຄ້າທີ່ຂາຍອອກໄປແມ່ນສິນຄ້າຫຍັງແດ່?
+-ຈົງສ້າງຟອມ (from_orders.php)?
+- ຈົງສ້າງຟາຍຮັບ (insert_orders.php) ເພື່ອບັນທຶກຂໍ້ມູນ ໂດຍມີເຂື່ອນໄຂຄື ຖ້າສີນຄ້າໃນຕາຕະລາງ products ຫາກນ້ອຍກວ່າຈຳນວນທີເຮົາຈະຂາຍ ຫຼື ບໍ່ມີ ແມ່ນໃຫ້ສະແດງຄຳວ່າ:  ສິນຄ້າບໍ່ພໍ່ຂາຍ,
+	ທຸກໆຄັ້ງທີ່ບັນທຶກຂໍ້ມູນ ຕ້ອງໃຫ້ຈຳນວນສິນຄ້າຢູ່ຕ່າງຕາຕະລາງ products ຫຼຸດລົ່ງຕາມຈຳນວນທີ່ຂາຍອອກ
+- ຈົ່ງສ້າງຟລາຍລາຍງານ ( select_roders.php ) ເພືອດຶງຂໍ້ມູນຈາກຕາຕະລາງ orders ໃນຖານຂໍ້ມູນອອກມາສະແດງຜົນ ໃນນ້າ web application
+- ຈົ່ງສ້າງຟລາຍຄົ້ນຫາຂໍ້ມູນການຂາຍສິນຄ້າ ໂດຍໃຫ້ສາມາດຄົ້ນຫາຕາມວັນທີ່ໄດ້ ( ຄື່ຂອງ receives )
+
+6. ຕາຕະລາງແຂວງ ( provinces ) (ໃຫ້ໍຊັບພອດພາສາລາວ)
+	prod_id		ລະຫັດແຂວງ PK (ເປັນລະຫັດຫຼັກໃນການເຊື່ອມໂຍງ)
+	prod_name	ຊື່ແຂວງ
+	remark		ໝາຍເຫດ
+- ຈົ່ງສ້າງ ຟອມ ( form_provinces.php )?
+- ຈົ່ງສ້າງ ຟລາຍຮັບ ( insert_provinces.php ) ເພື່ອບັນທຶກຂໍ້ມູນ ໂດຍມີເງືອນໄຂຄື ຖ້າວ່າ ຊື່ແຂວງໃດມີແລ້ວ
+	ແມ່ນບໍ່ສາມາດບັນທຶກເຂົ້າໄປໄດ້ອີກ
+- ຈົ່ງສ້າງຟລາຍງານ ( select_orders.php ) ເພື່ອດຶງຂໍ້ມູນຈາກຕາຕະລາງ provinces ໃນຖານຂໍ້ມູນອອກມາສະແດ່ງຜົນ ໃນໜ້າ web application ພ້ອມທັງລົບ ແລະ ແກ້ໄຂໄດ້
+ create table provinces (pro_id int(5) auto_increment primary key,pro_name varchar(100) not null,remark text not null)default charset=utf8;
+7. ຕາຕະລາງເມືອງ 
+	ໃຫ້ນັກສຶກສາໄປສ້າງ 
+	- ຕາຕະລາງມີຊື່ວ່າ districts
+	dis_id		 ລະຫັດເມືອງ PK ( ກຳນົດໃຫ້ເປັນ key ຫຼັກເພື່ອໃຊ້ໃນການເຊື່ອມໂຍງ )
+	pro_id		ລະຫັດແຂວງ FK ( ກຳນົດໃຫ້ເປັນ key ສຳຮ້ອງ ເຊິ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ provinces)
+	dis_name		ຊື່ເມືອງ
+	remark		ໝາຍເຫດ
+
+	create table districts (dis_id int(5) auto_increment primary key,
+	pro_id int(5) not null,foreign key(pro_id)references provinces (pro_id),
+	dis_name varchar(50) not null,
+	remark text not null)default charset=utf8;
+
+-​ ຈົ່ງສ້າງ ຟອມ (form_districts.php)
+- ຈົ່ງສ້າງຟລາຍຮັບ (insert_districts.php) ເພື່ອບັນທຶກຂໍ້ມູນ ໂດຍມີເງືອນໄຂຄື ຖ້າວ່າ ເມືອງໃນແຂວງດຽວກັນມີແລ້ວ 
+	ແມ່ນບໍ່ສາມາດບັານທຶກເຂົ້າໄປໄດ້ອີກ
+- ຈົ່ງສ້າງຟລາຍລາຍງາຍຂໍ້ມູນ (select_districts.php) ເພື່ອດຶງຂໍ້ມູນຈາກຕາຕະລາງ districts ໃນຖານຂໍ້ມູນອອກມາສະແດ່ງຜົນ ໃນໜ້າ web
+	application ພ້ອມທັງລົບ ແລະ ແກ້ໄຂໄດ້.
+
+
+8. ຕາຕະລາງ ບ້ານ:
+	ໃຫ້ນັກສຶກສາໄປສ້າງ 
+	- ຕາຕະລາງ  (villages);
+	vill_id		ລະຫັດບ້ານ PK (ເປັນລະຫັດຫຼັກໃຊ້ການເຊື່ອມໂຍງ)
+	vill_name		ຊື່ ບ້ານ
+	pro_id		ລະຫັດ FK ( ນຳນົດເປັນ key ສຳຮ້ອງເຊິ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ provinces )
+	dis_id		ລະຫັດ FK ( ນຳນົດເປັນ key ສຳຮ້ອງເຊິ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ districts )
+	remark		ໝາຍເຫດ
+
+	create table villages (vill_id int (5) auto_increment primary key,
+	vill_name varchar(50) not null, 
+	pro_id int(5) not null,foreign key(pro_id)references provinces(pro_id),
+	dis_id int(5) not null,foreign key(dis_id)references districts(dis_id),
+	remark text not null)default charset=utf8;
+
+- ຈົ່ງສ້າງຟອມບັນທຶກບ້ານ ໂດຍມີເງື່ອນໄຂ່ວ່າ:
+	ກ. ໃຫ້ເລືອກແຂວງກ່ອນ ຈາກນັ້ນໃຫ້ມີເມືອງສະເພາະທີ່ຢູ່ໃນແຂວງນັ້ນ
+	ຂ. ຈົ່ງຂຽນກັນບໍ່ໃຫ້ບັນທຶກບ້ານທີ່ມີຊື່ຄືກັນໃນກໍລະນີທີ່ຢູ່ໃນເມືອງດຽວກັນ
+- ຈົ່ງສ້າງ ຟລາຍຮັບ ( insert_villages.php ) ເພື່ອບັນທຶກຂໍ້ມູນບ້ານ
+- ຈົ່ງສ້າງຟລາຍລາຍງານ ( select_villages.php ) ເພື່ອດຶງຂໍ້ມູນຈາກຕາຕະລາງ villages ໃນຖານຂໍ້ມູນອອກມາສະແດ່ງຜົນ ໃນໜ້າ web
+	application ພ້ອມທັງລົບ ແລະ ແກ້ໄຂໄດ້.
+
+9. ຕາຕະລາງຜູ້ນໍາໃຊ້.
+	ໃຫ້ນັກສຶກສາໄປສ້າງ
+	- ຕາຕະລາງຜູ້ນໍາໃຊ້ (user ) ໂດຍມີຊື່ຟິວດັ່ງນີ້:
+	user_id		ລະຫັດຜູ້ໃຊ້ PK ( ກຳນົດເປັນ key ຫຼັກເພື່ອໃຊ້ໃນການເຊື່ອມໂຍງ );
+	fname		ຊື່
+	lname		ນາມສະກຸນ
+	gender		ເພດ
+	dob		ວັນເດືອນປີເກີດ
+	tel		ເບີໂທ
+	pro_id		ລະຫັດແຂວງ FK ( ກຳນົດເປັນ key ສຳຮອງເຊິ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ provinces);
+	dis_id		ລະຫັດເມືອງ FK ( ກຳນົດເປັນ key ສຳຮອງເຊິ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ districts);
+	vill_id		ລະຫັດບ້ານ FK ( ກຳນົດເປັນ key ສຳຮອງເຊິ່ງເຊື່ອມໂຍງກັບຕາຕະລາງ villages );
+	stauts		ສະຖານຜູ້ໃຊ້ງານ
+	username		ລະຫັດ
+	password		ລະຫັດຜູ້ໃຊ້ງານ ( ກຳນົດເປັນ varchar ຂັ້ນຕຳແມ່ນ 90 ຫົວໜ່ວຍ )
+	remark		ໝາຍເຫດ
+
+	ຕອບ: ສ້າງຕາຕະລາງ
+	create table user (user_id int(5) auto_increment primary key,
+	fname varchar(50) not null,
+	lname varchar(50) not null,
+	gender varchar(20) not null,
+	dob date not null,
+	tel varchar(30) not null,
+	pro_id int(5) not null,foreign key(pro_id)references provinces(pro_id),
+	dis_id int(5) not null,foreign key(dis_id)references districts(dis_id),
+	vill_id int(5) not null,foreign key(vill_id)references villages(vill_id),
+	status varchar(100) not null,
+	username varchar(50) not null,
+	password varchar(150) not null,
+	remark text not null)default charset=utf8;
+-ຕາຕະລາງ ພະນັກງານສ້າງເພື່ອໃຊບັນທືກຂໍ້ມູນເຂົ້າຕາຕະລາງຕ່າງໆ ເຊືອມໂຍງກັບຕາຕະລາງ ບ້ານ,ເມືອງ,ແຂວງ,ເພື່ອໃຫ້ຮູ້ວ່າພະນັກງານຄົນນີ້ມາຈາກບ້ານເມືອງແຂວງ.
+
+           -ຈົ່ງສ້າງຟ້ອມບັນທືກຂໍ້ມູນພະນັກງານ​(from_users.php)ໂດຍມີເງືອນໄຂດັ່ງນ໊:
+              ກ.ເມື່ອເລືອກແຂວງໃຫ້ມີສະເພາະແຕ່ເມືອງທີ່ມີຢູ່ໃນແຂວງນັ້ນ
+	* ຄັນຕອນການເພີ່ມ user_id ເຂົ້າໄປໃນຕາຕະລາງ
+	1.  alter table ຊື່ຕາຕະລາວ andd user_id int(5) not null;
+	2. decs ຊື່ຕາຕະລາງ
+	3. set foreign_key_checks=0; 
+	4. alter table ຊື່ຕາຕະລາງ add foreign key(user_id)references user(user_id);
+	5 .decs ຊື່ຕາລະລາງ
+		ຫຼັງຈາກນັ້ນກວດສອບເບິ່ງຄວາມຖືກຕ້ອງ
+      ຄຳຖາມຄົ້ນຄວ້າ php2,jQuery,bootstrap
+1.ຫ້ອງຮຽນ:ຊື່,ນາມສະກຸນ,ເພດ,ປີຮຽນ,ຫ້ອງຮຽນ.

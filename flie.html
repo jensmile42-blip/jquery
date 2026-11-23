@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Jquery.js"></script>
+    <script>
+      $(function () {
+        $(".btn_red").click(function () {
+          $("h1").css("color", "red");
+        });
+        $(".btn_blue").click(function () {
+          $("h1").css("color", "blue");
+        });
+        $(".btn_yellow").click(function () {
+          $("h1").css("color", "yellow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 style="font-family: phetsarath ot">ມື້ນີ້ຝົນຕົກຂ້ອຍຈະນອນ</h1>
+    <button type="button" class="btn_red">ສີເເດງ</button>
+    <button type="button" class="btn_blue">ສີຟ້າ</button>
+    <button type="button" class="btn_yellow">ສີເຫລື່ອງ</button>
+  </body>
+</html>

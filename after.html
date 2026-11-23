@@ -1,0 +1,22 @@
+<script src="Jquery.js"></script>
+    <script>
+      $(function () {
+        $("h3").hide();
+        $(".red").click(function () {
+          $(".a").show();
+          $(".b").hide();
+        });
+        $(".blue").click(function () {
+          $(".b").show();
+          $(".a").hide();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3 class="a" style="color: red">ເຈົ້າເລືອກສີເເດງ</h3>
+    <h3 class="b" style="color: blue">ເຈົ້າເລືອກສີຟ້າ</h3>
+    <button class="red">ເຈົ້າເລືອກສີເເດງ</button>
+    <button class="blue">ເຈົ້າເລືອກສີຟ້າ</button>
+  </body>
+</html>
