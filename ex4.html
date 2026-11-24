@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Jquery.js"></script>
+    <script>
+      $(function () {
+        $("h1").mouseover(function () {
+          $("h1").css({ "background-color": "red", "font-size": "10px" });
+        });
+        $("h1").mouseleave(function () {
+          $("h1").css({ "background-color": "yellow", "font-size": "" });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>ການນຳໃຊ້ Mouse events</h1>
+  </body>
+</html>
