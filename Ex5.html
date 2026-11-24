@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Jquery.js"></script>
+    <script>
+      $(function () {
+        $(".a").keydown(function () {
+          $(".a").css({ "background-color": "gray", "font-size": "30px" });
+        });
+        $(".a").keyup(function () {
+          $(".a").css({ "background-color": "pink", "font-size": "10px" });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    ປ້ອນຂໍ້ມູນ<input class="a" type="text" name="text" />
+  </body>
+</html>
