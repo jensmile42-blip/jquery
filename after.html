@@ -1,22 +1,18 @@
 <script src="Jquery.js"></script>
     <script>
-      $(function () {
-        $("h3").hide();
-        $(".red").click(function () {
-          $(".a").show();
-          $(".b").hide();
-        });
-        $(".blue").click(function () {
-          $(".b").show();
-          $(".a").hide();
-        });
-      });
+      $(function(){
+        $(".btn1").click(function(){
+          $("p").fadeOut();
+        })
+        $(".btn2").click(function(){
+          $("p").fadeIn();
+        })
+      })
     </script>
   </head>
   <body>
-    <h3 class="a" style="color: red">ເຈົ້າເລືອກສີເເດງ</h3>
-    <h3 class="b" style="color: blue">ເຈົ້າເລືອກສີຟ້າ</h3>
-    <button class="red">ເຈົ້າເລືອກສີເເດງ</button>
-    <button class="blue">ເຈົ້າເລືອກສີຟ້າ</button>
+   <p>ການນຳໃຊ້ fadeIn ເເລະ fadeOut</p>
+    <button class="btn1">fadeIn</button>
+    <button class="btn2">fadeOut</button>
   </body>
 </html>
