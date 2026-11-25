@@ -13,24 +13,24 @@
     </style> 
     <script src="jquery.js"></script>
     <script>
-$(function (){
-$("#send").click(function () {
-  var a=$("#fname").val();
-  var b=$("#lname").val();
-  var c=$("input[id='gender']:checked").val();
-  $.post("get.php",{
-    fname:a,
-    lname:b,
-    gender:c
-  },
-  function(output){
-    $("#show").html(output);
-  }
-);
-});
+      $(function(){
+        $("#send").click(function () {
+          var a=$("#fname").val();
+          var b=$("#lname").val();
+          var c=$("input[id='gender']:checked").val();
+          $.post("get.php",{
+            fname:a,
+            lname:b,
+            gender:c
+          },
+          function(output){
+            ("#show").html(output);
+          }
+        );
+        });
       });
     </script>
-     
+    
   </head>
   <body>
     <div class="container-fluid">
