@@ -11,6 +11,8 @@
     <style>
       * {
         font-family: phetsarath ot;
+        justify-content: center;
+
       }
     </style>
 
@@ -48,6 +50,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
+          <div>
           <div class="card">
             <div class="card-header text-center text-white bg-success">
               <h2 class="text-center" align="center">ຟອມບັນທືກຂໍ້ມູນ</h2>
@@ -109,6 +112,7 @@
           </div>
         </div>
         <div class="col-md-4"></div>
+        </div>
       </div>
     </div>
   </body>
