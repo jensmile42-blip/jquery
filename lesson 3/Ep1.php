@@ -11,7 +11,7 @@
       }
     
     </style> 
-    <script src="jquery.js"></script>
+    <script src="Jquery.js"></script>
     <script>
       $(function(){
         $("#send").click(function () {
@@ -47,6 +47,7 @@
                   <input
                     type="text"
                     id="fname"
+                    name="fname"
                     placeholder="ປ້ອນຊື້"
                     class="form-control"
                   />
@@ -56,6 +57,7 @@
                   <input
                     type="text"
                     id="lname"
+                    name="lname"
                     placeholder="ປ້ອນນາມສະກຸນ"
                     class="form-control"
                   />
@@ -63,18 +65,14 @@
                 <div class="form-group">
                   <label for="">ເລືອກເພດ</label>
                   <div class="radio-inline">
-                    <input type="radio" name="gender" value="ເພດຫຍີງ" />ຫຍີງ
-                    <input type="radio" name="gender" value="ເພດຊາຍ" />ຊາຍ
+                    <input type="radio" id="gender"name="gender" value="ເພດຫຍີງ" />ຫຍີງ
+                    <input type="radio"id="gender" name="gender" value="ເພດຊາຍ" />ຊາຍ
                   </div>
                 </div>
                 <div class="form-group">
                <div class="card-footer">
-                    <button type="submit"class="btn btn-success">
-                        <b class="fas fa-save">ບັນທືກ</b>
-                    </button>
-                    <button type="reset"class="btn btn-danger">
-                        <b class="fas fa-save">ຍົກເລີກ</b>
-                    </button>
+               <button type="button" class="btn btn-success"id="send">ບັນທືກ</button>
+               <button type="button" class="btn btn-danger"id="reset">ຍົກເລກ</button>
                 </div>
               </form>
             </div>
