@@ -53,7 +53,7 @@
               <h2 class="text-center" align="center">ຟອມບັນທືກຂໍ້ມູນ</h2>
             </div>
             <div class="card-body">
-              <form action="./get.php" class="vertical" method="get">
+              <form action="get.php" class="vertical" method="get">
                 <div class="mt-3">
                   <label for="">ຊື່ : </label>
                   <input
