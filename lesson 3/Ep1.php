@@ -4,75 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.3.8-dist/css/bootstrap.min.css"
+    />
     <style>
       * {
-        font-family: "phetsarath ot";
+        font-family: phetsarath ot;
       }
-    
-    </style> 
+    </style>
+
     <script src="Jquery.js"></script>
     <script>
-      $(function(){
-        $("#send").click(function () {
-          var a=$("#fname").val();
-          var b=$("#lname").val();
-          var c=$("input[id='gender']:checked").val();
-          $.post("get.php",{
-            fname:a,
-            lname:b,
-            gender:c
-          },
-          function(output){
-            ("#show").html(output);
-          }
-        );
+      $(document).ready(function () {
+        $("#send").click(function (e) {
+          e.preventDefault();
+          var a = $("#fname").val();
+          var b = $("#lname").val();
+          var c = $("input[id='gender']:checked").val();
+          $.get(
+            "get.php",
+            {
+              fname: a,
+              lname: b,
+              gender: c,
+            },
+            function (output) {
+              $("#show").html(output);
+            },
+          );
+        });
+        $("$reset").click(function () {
+          var a = $("#fname").val();
+          var b = $("#lname").val();
+          var c = $("input[id='gender']:checked").val();
+          $("#show").html("");
         });
       });
     </script>
-    
   </head>
+
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
           <div class="card">
-            <div class="card-header text-white bg-success">
-              <h2 align="center">ຟອມບັນທືກຂໍ້ມູນ</h2>
+            <div class="card-header text-center text-white bg-success">
+              <h2 class="text-center" align="center">ຟອມບັນທືກຂໍ້ມູນ</h2>
             </div>
             <div class="card-body">
-              <form action="" class="vertical">
-                <div class="form-group">
-                  <label for="">ຊື່</label>
+              <form action="./get.php" class="vertical" method="get">
+                <div class="mt-3">
+                  <label for="">ຊື່ : </label>
                   <input
                     type="text"
                     id="fname"
                     name="fname"
-                    placeholder="ປ້ອນຊື້"
+                    placeholder="ປ້ອນຊື່"
+                    id=""
                     class="form-control"
                   />
                 </div>
-                <div class="form-group">
-                  <label for="">ນາມສະກຸນ</label>
+                <div class="mt-3">
+                  <label for="">ນາມສະກຸນ : </label>
                   <input
                     type="text"
                     id="lname"
                     name="lname"
                     placeholder="ປ້ອນນາມສະກຸນ"
+                    id=""
                     class="form-control"
                   />
                 </div>
-                <div class="form-group">
+                <div class="mt-3">
                   <label for="">ເລືອກເພດ</label>
                   <div class="radio-inline">
-                    <input type="radio" id="gender"name="gender" value="ເພດຫຍີງ" />ຫຍີງ
-                    <input type="radio"id="gender" name="gender" value="ເພດຊາຍ" />ຊາຍ
+                    <input
+                      type="radio"
+                      id="gender"
+                      name="gender"
+                      value="ເພດຍິງ"
+                    />ເພດຍິງ
+                    <input
+                      type="radio"
+                      id="gender"
+                      name="gender"
+                      value="ເພດຊາຍ"
+                    />ເພດຊາຍ
                   </div>
                 </div>
-                <div class="form-group">
-               <div class="card-footer">
-               <button type="button" class="btn btn-success"id="send">ບັນທືກ</button>
-               <button type="button" class="btn btn-danger"id="reset">ຍົກເລກ</button>
+                <div class="mt-3">
+                  <button type="button" class="btn btn-success" id="send">
+                    ສົ່ງຂໍ້ມນ
+                  </button>
+                  <button type="button" class="btn btn-danger" id="reset">
+                    ລ້າງຂໍ້ມູນ
+                  </button>
                 </div>
               </form>
             </div>
