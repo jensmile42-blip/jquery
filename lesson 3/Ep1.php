@@ -34,7 +34,7 @@
             },
           );
         });
-        $("$reset").click(function () {
+        $("#reset").click(function () {
           var a = $("#fname").val();
           var b = $("#lname").val();
           var c = $("input[id='gender']:checked").val();
@@ -95,7 +95,7 @@
                 </div>
                 <div class="mt-3">
                   <button type="button" class="btn btn-success" id="send">
-                    ສົ່ງຂໍ້ມນ
+                    ສົ່ງຂໍ້ມູນ
                   </button>
                   <button type="button" class="btn btn-danger" id="reset">
                     ລ້າງຂໍ້ມູນ
