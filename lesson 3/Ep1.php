@@ -11,8 +11,9 @@
       }
     
     </style> 
+    <script src="jquery.js"></script>
     <script>
-      $(function (){
+$(function (){
 $("#send").click(function () {
   var a=$("#fname").val();
   var b=$("#lname").val();
@@ -67,12 +68,13 @@ $("#send").click(function () {
                   </div>
                 </div>
                 <div class="form-group">
-                  <button type="button" class="btn btn-success" id="submit">
-                    ບັນທືກ
-                  </button>
-                  <button type="button" class="btn btn-danger" id="reset">
-                    ຍົກເລີກ
-                  </button>
+               <div class="card-footer">
+                    <button type="submit"class="btn btn-success">
+                        <b class="fas fa-save">ບັນທືກ</b>
+                    </button>
+                    <button type="reset"class="btn btn-danger">
+                        <b class="fas fa-save">ຍົກເລີກ</b>
+                    </button>
                 </div>
               </form>
             </div>
