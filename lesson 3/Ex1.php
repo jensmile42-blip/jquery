@@ -19,7 +19,7 @@
     <script>
       $(function () {
         $("#send").click(function () {
-          var a = $("#room_number").val();
+          var a = $("#room_No").val();
           var b = $("#room_type").val();
           var c = $("#price").val();
           var d = $("input[name='status']:checked").val();
@@ -47,7 +47,7 @@
           }
         });
          $("#reset").click(function () {
-          var a=$("#room_number").val();
+          var a=$("#room_No").val();
           var b=$("#room_type").val();
           var c=$("#price").val();
           var d=$("input[name='status']:checked").val();
@@ -72,8 +72,8 @@
                   <label for="">ເບີຫ້ອງ:</label>
                   <input
                     type="text"
-                    id="room_number"
-                    name="room_number"
+                    id="room_NO"
+                    name="room_No"
                     placeholder="ປ້ອນເບີຫ້ອງ"
                     class="form-control"
                   />
