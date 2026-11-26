@@ -6,8 +6,8 @@
     <title>Document</title>
     <link
       rel="stylesheet"
-      href="./bootstrap-5.3.8-dist/css/bootstrap.min.css"
-    />
+      href="./bootstrap-5.3.8-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="icon/css/all.min.css">
     <style>
       * {
         font-family: phetsarath ot;
@@ -16,6 +16,8 @@
       }
     </style>
     <script src="Jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
       $(function () {
         $("#send").click(function () {
@@ -23,19 +25,34 @@
           var b = $("#room_type").val();
           var c = $("#price").val();
           var d = $("input[name='status']:checked").val();
-          if(a==""){
-            alert("ກະລຸນາປ້ອນເບີຫ້ອງ");
-          }else if(b==""){
-            alert("ກະລຸນາເລືອກປະເພດຫ້ອງ");
-      
-          }else if(c==""){
-            alert("ກະລຸນາເລືອກລາຄາຫ້ອງ");
+          if(!a){
+          Swal.fire({
+            icon:'warning',
+            title:'ເເຈ້ງເຕືອນ',
+            text:'ກະລຸນາປ້ອນເບີຫ້ອງ'
+          });
+          }else if(!b){
+          Swal.fire({
+            icon:'warning',
+            title:'ເເຈ້ງເຕືອນ',
+            text:'ກະລຸນາເລືອກປະເພດຫ້ອງ'
+          });
+          }else if(!c){
+            Swal.fire({
+            icon:'warning',
+            title:'ເເຈ້ງເຕືອນ',
+            text:'ກະລຸນາເລືອກລາຄາ'
+          });
           
           }else if(!d){
-            alert("ຫ້ອງບໍ່ວ່າງ");
+            Swal.fire({
+            icon:'warning',
+            title:'ເເຈ້ງເຕືອນ',
+            text:'ກະລຸນາເລືອກ ສະຖານະຫ້ອງກ່ອນ'
+          });
           }else{
             $.get("getEx.php",{
-              room_number:a,
+              room_No:a,
               room_type:b,
               price:c,
               status:d
@@ -63,23 +80,23 @@
         <div class="col-md-4">
           <div>
           <div class="card">
-            <div class="card-header text-center text-white bg-success">
+            <div class="card-header text-center text-white bg-primary">
               <h2 class="text-center" align="center">ຟອມບັນທືກຂໍ້ມູນຫ້ອງ</h2>
             </div>
             <div class="card-body">
               <form action="getEx.php" class="vertical" method="get">
-                <div class="mt-3">
+                <div class="mt-2">
                   <label for="">ເບີຫ້ອງ:</label>
                   <input
                     type="text"
-                    id="room_NO"
+                    id="room_No"
                     name="room_No"
                     placeholder="ປ້ອນເບີຫ້ອງ"
                     class="form-control"
                   />
                 </div>
                  <div class="mt-2">
-                  <label for="">ປະເພດຫ້ອງ: </label><br>
+                  <label for="">ປະເພດຫ້ອງ: </label>
                   <select name="room_type" id="room_type">
                     <option value=""class="fomr-control">ເລືອກຫ້ອງ</option>
                     <option value="ຫ້ອງພັດລົມ">ຫ້ອງພັດລົມ</option>
@@ -87,8 +104,8 @@
                     <option value="ຫ້ອງພີເສດ">ຫ້ອງພີເສດ</option>
                   </select>
                 </div>
-                <div class="mt-3">
-                  <label for="">ລາຄາຫ້ອງ: </label><br>
+                <div class="mt-2">
+                  <label for="">ລາຄາຫ້ອງ / ຄືນ: </label>
                   <select name="price" id="price">
                     <option value=""class="form-control">ເລືອກລາຄາຫ້ອງ</option>
                     <option value="200000">200000</option>
@@ -97,12 +114,13 @@
                   </select>
                 </div>
                
-                <div class="mt-3">
+                <div class="mt-2">
                   <label for="">ສະຖານະຫ້ອງ</label><br>
+                  <div class="radio-inline"></div>
                   <input type="radio"name="status" value="ວ່າງ">ວ່າງ
                   <input type="radio"name="status" value="ບໍ່ວ່າງ">ບໍ່ວ່າງ
                 </div>
-                <div class="mt-3">
+                <div class="mt-2">
                   <button type="button" class="btn btn-success" id="send">
                     ສົ່ງຂໍ້ມູນ
                   </button>
@@ -117,7 +135,14 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4"></div>
+  
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header text-white bg-success">
+              <h3 align="center">ລາຍງານຂໍ້ມູນ</h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
