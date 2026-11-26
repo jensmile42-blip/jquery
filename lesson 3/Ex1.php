@@ -69,7 +69,7 @@
             <div class="card-body">
               <form action="getEx.php" class="vertical" method="get">
                 <div class="mt-3">
-                  <label for=""">ເບີຫ້ອງ : </label>
+                  <label for="">ເບີຫ້ອງ:</label>
                   <input
                     type="text"
                     id="room_number"
