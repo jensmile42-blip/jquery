@@ -43,7 +43,7 @@
             function(output){
               $("#show").html(output);
             }
-            )
+            );
           }
         });
          $("#reset").click(function () {
