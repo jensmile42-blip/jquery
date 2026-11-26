@@ -22,7 +22,7 @@
           var a = $("#room_number").val();
           var b = $("#room_type").val();
           var c = $("#price").val();
-          var d = $("input[id='status']:checked").val();
+          var d = $("input[name='status']:checked").val();
           if(a==""){
             alert("ກະລຸນາປ້ອນເບີຫ້ອງ");
           }else if(b==""){
@@ -31,7 +31,7 @@
           }else if(c==""){
             alert("ກະລຸນາເລືອກລາຄາຫ້ອງ");
           
-          }else if(d=""){
+          }else if(!d){
             alert("ຫ້ອງບໍ່ວ່າງ");
           }else{
             $.get("getEx.php",{
@@ -50,7 +50,7 @@
           var a=$("#room_number").val();
           var b=$("#room_type").val();
           var c=$("#price").val();
-          var d=$("input[id='status']:checked").val();
+          var d=$("input[name='status']:checked").val();
           $("#show").html("");
          })
       });
@@ -99,8 +99,8 @@
                
                 <div class="mt-3">
                   <label for="">ສະຖານະຫ້ອງ</label><br>
-                  <input type="radio"name="status"id="status"value="ວ່າງ">ວ່າງ
-                  <input type="radio"name="status"id="status"value="ບໍ່ວ່າງ">ບໍ່ວ່າງ
+                  <input type="radio" name="status" value="ວ່າງ">ວ່າງ
+                  <input type="radio" name="status" value="ບໍ່ວ່າງ">ບໍ່ວ່າງ
                 </div>
                 <div class="mt-3">
                   <button type="button" class="btn btn-success" id="send">
