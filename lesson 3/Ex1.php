@@ -12,7 +12,27 @@
       * {
         font-family: phetsarath ot;
         justify-content: center;
+        .swal2-popup {
+  width: 260px !important;
+  height:230px
+  padding: 1rem !important;
+  font-size: 0.5rem !important;
+}
 
+.swal2-title {
+  font-size: 1.5rem !important;
+  margin: 0.5rem 0 !important;
+}
+
+.swal2-html-container {
+  font-size: 0.9rem !important;
+  margin: 0.5rem 0 0.7rem !important;
+}
+
+.swal2-confirm {
+  padding: 0.5rem 1.2rem !important;
+  font-size: 0.8rem !important;
+}
       }
     </style>
     <script src="Jquery.js"></script>
@@ -29,26 +49,31 @@
           Swal.fire({
             icon:'warning',
             title:'ເເຈ້ງເຕືອນ',
-            text:'ກະລຸນາປ້ອນເບີຫ້ອງ'
+            text:'ກະລຸນາປ້ອນເບີຫ້ອງ',
+           
           });
           }else if(!b){
           Swal.fire({
             icon:'warning',
             title:'ເເຈ້ງເຕືອນ',
-            text:'ກະລຸນາເລືອກປະເພດຫ້ອງ'
+            text:'ກະລຸນາເລືອກປະເພດຫ້ອງ',
+            
           });
           }else if(!c){
             Swal.fire({
             icon:'warning',
             title:'ເເຈ້ງເຕືອນ',
-            text:'ກະລຸນາເລືອກລາຄາ'
+            text:'ກະລຸນາເລືອກລາຄາ',
+           
           });
           
           }else if(!d){
             Swal.fire({
             icon:'warning',
             title:'ເເຈ້ງເຕືອນ',
-            text:'ກະລຸນາເລືອກ ສະຖານະຫ້ອງກ່ອນ'
+            text:'ກະລຸນາເລືອກ ສະຖານະຫ້ອງກ່ອນ',
+         
+           
           });
           }else{
             $.get("getEx.php",{
@@ -96,7 +121,7 @@
                   />
                 </div>
                  <div class="mt-2">
-                  <label for="">ປະເພດຫ້ອງ: </label>
+                  <label for=""> ປະເພດຫ້ອງ: </label>
                   <select name="room_type" id="room_type">
                     <option value=""class="fomr-control">ເລືອກຫ້ອງ</option>
                     <option value="ຫ້ອງພັດລົມ">ຫ້ອງພັດລົມ</option>
@@ -107,7 +132,7 @@
                 <div class="mt-2">
                   <label for="">ລາຄາຫ້ອງ / ຄືນ: </label>
                   <select name="price" id="price">
-                    <option value=""class="form-control">ເລືອກລາຄາຫ້ອງ</option>
+                    <option value=""class="form-control"> ເລືອກລາຄາຫ້ອງ </option>
                     <option value="200000">200000</option>
                     <option value="300000">300000</option>
                     <option value="500000">500000</option>
@@ -131,16 +156,17 @@
               </form>
             </div>
             <div class="card-footer">
-              <div id="show"></div>
             </div>
           </div>
         </div>
-  
         </div>
         <div class="col-md-4">
           <div class="card">
             <div class="card-header text-white bg-success">
               <h3 align="center">ລາຍງານຂໍ້ມູນ</h3>
+            </div>
+            <div class="card-body">
+                <div id="show"></div>
             </div>
           </div>
         </div>
